@@ -47,7 +47,7 @@ Use the copy function below to do the following:
 
 
 function copy(array){
-  return(array[array.length])
+  return[...array]
 }
 
 
@@ -64,8 +64,7 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 
 function is31Flavors(array){
-  let length = (array.length)
-  if(length === 31){
+  if(array.length === 31){
     return true
   } else{
     return false
@@ -87,8 +86,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(array,str){
+  array.unshift(str)
+  return (array)
  }
 
 
@@ -105,8 +105,9 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array){
+ let newArray = array.pop()
+ return newArray
 }
 
 
@@ -123,8 +124,9 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array,num){
+  let flavorChoice = array[num]
+  return flavorChoice
 }
 
 
@@ -143,8 +145,10 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(array,str){
+  let location = array.indexOf(str)
+  array.splice(location,1)
+  return array
 }
 
 
@@ -168,8 +172,14 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array,str){
+let filteredArray = []
+  for(let i = 0; i < array.length; i ++){
+    if (array[i].includes(str)){
+      filteredArray.pop(array[i])
+      return filteredArray
+    }
+  }
 }
 
 
@@ -186,10 +196,18 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(array){
+let count = 0
+      for(let i = 0; i < array.length; i++){
+        for (let p = 0; p < array[i].length; p){
+        if (array[p].includes(" ")) { 
+          count ++;
+        
+      }
+      return count
+    }
+  }
 }
-
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
 Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
