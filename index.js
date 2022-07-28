@@ -106,8 +106,8 @@ Use the removeLastFlavor function below to do the following:
 
 
 function removeLastFlavor(array){
- let newArray = array.pop()
- return newArray
+  array.pop()
+ return array
 }
 
 
@@ -172,16 +172,18 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(array,str){
-let filteredArray = []
-  for(let i = 0; i < array.length; i ++){
-    if (array[i].includes(str)){
-      filteredArray.pop(array[i])
-      return filteredArray
-    }
-  }
-}
 
+function filterByWord(array,str){
+  let filteredArray = []
+    for(let i = 0; i < array.length; i ++){
+      if (array[i].includes(str)){
+        filteredArray.push(array[i])
+       
+      }
+      
+    } 
+    return filteredArray
+  }
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
